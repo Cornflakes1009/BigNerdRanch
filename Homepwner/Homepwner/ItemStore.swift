@@ -20,9 +20,24 @@ class ItemStore {
         return newItem
     }
     
-    init() {
-        for _ in 0..<5 {
-            createItem()
+    func removeItem(_ item: Item) {
+        if let index = allItems.firstIndex(of: item) {
+            allItems.remove(at: index)
         }
+    }
+    
+    func moveItem(from fromIndex: Int, to toIndex: Int) {
+        if(fromIndex == toIndex) {
+            return
+        }
+        
+        // get reference to object being moved so can reinsert it
+        let movedItem = allItems[fromIndex]
+        
+        // remove item from array
+        allItems.remove(at: fromIndex)
+        
+        // insert item into array at new location
+        allItems.insert(movedItem, at: toIndex)
     }
 }
