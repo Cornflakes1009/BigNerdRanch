@@ -19,6 +19,7 @@
 		D933B52923B3434C0026A365 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D933B52823B3434C0026A365 /* ItemStore.swift */; };
 		D9F8296723B9A1DD006B086E /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8296623B9A1DD006B086E /* ItemCell.swift */; };
 		D9F8296923BBE874006B086E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8296823BBE874006B086E /* DetailViewController.swift */; };
+		D9F8296B23C00AE6006B086E /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8296A23C00AE6006B086E /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D933B52823B3434C0026A365 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		D9F8296623B9A1DD006B086E /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		D9F8296823BBE874006B086E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D9F8296A23C00AE6006B086E /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,13 +109,14 @@
 		D933B4F323B33C460026A365 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
-				D933B52623B33E100026A365 /* Item.swift */,
-				D933B52823B3434C0026A365 /* ItemStore.swift */,
 				D933B4F423B33C460026A365 /* AppDelegate.swift */,
 				D933B4F623B33C460026A365 /* SceneDelegate.swift */,
 				D933B4FA23B33C460026A365 /* Main.storyboard */,
-				D9F8296823BBE874006B086E /* DetailViewController.swift */,
+				D933B52623B33E100026A365 /* Item.swift */,
+				D933B52823B3434C0026A365 /* ItemStore.swift */,
+				D9F8296A23C00AE6006B086E /* ImageStore.swift */,
 				D9F8296623B9A1DD006B086E /* ItemCell.swift */,
+				D9F8296823BBE874006B086E /* DetailViewController.swift */,
 				D933B52423B33D350026A365 /* ItemsViewController.swift */,
 				D933B4FD23B33C480026A365 /* Assets.xcassets */,
 				D933B4FF23B33C480026A365 /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 				D933B52723B33E100026A365 /* Item.swift in Sources */,
 				D933B52523B33D350026A365 /* ItemsViewController.swift in Sources */,
 				D9F8296723B9A1DD006B086E /* ItemCell.swift in Sources */,
+				D9F8296B23C00AE6006B086E /* ImageStore.swift in Sources */,
 				D933B4F523B33C460026A365 /* AppDelegate.swift in Sources */,
 				D933B52923B3434C0026A365 /* ItemStore.swift in Sources */,
 				D933B4F723B33C460026A365 /* SceneDelegate.swift in Sources */,

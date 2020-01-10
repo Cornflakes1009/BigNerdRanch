@@ -8,17 +8,20 @@
 
 import UIKit
 
-class Item: NSObject {
+// needed to add NSCoding for archiving data
+class Item: NSObject, Codable {
     var name: String
     var valueInDollars: Int
     var serialNumber: String?
     let dateCreated: Date
+    let itemKey: String
     
     init(name: String, serialNumber: String?, valueInDollars: Int) {
         self.name = name
         self.serialNumber = serialNumber
         self.valueInDollars = valueInDollars
         self.dateCreated = Date()
+        self.itemKey = UUID().uuidString
         
         super.init()
     }
@@ -42,5 +45,23 @@ class Item: NSObject {
         } else {
             self.init(name: "", serialNumber: nil, valueInDollars: 0)
         }
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(name, forKey: "name")
+        coder.encode(dateCreated, forKey: "dateCreated")
+        coder.encode(itemKey, forKey: "itemKey")
+        coder.encode(serialNumber, forKey: "serialNumber")
+        coder.encode(valueInDollars, forKey: "valueInDollars")
+    }
+    
+    required init?(coder: NSCoder) {
+        name = coder.decodeObject(forKey: "name") as! String
+        dateCreated = coder.decodeObject(forKey: "dateCreated") as! Date
+        itemKey = coder.decodeObject(forKey: "itemKey") as! String
+        serialNumber = coder.decodeObject(forKey: "serialNumber") as! String?
+        valueInDollars = coder.decodeInteger(forKey: "valueInDollars")
+        
+        super.init()
     }
 }

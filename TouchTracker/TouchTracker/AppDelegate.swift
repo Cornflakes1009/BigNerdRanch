@@ -1,21 +1,19 @@
 //
 //  AppDelegate.swift
-//  Homepwner
+//  TouchTracker
 //
-//  Created by HaroldDavidson on 12/24/19.
-//  Copyright © 2019 HaroldDavidson. All rights reserved.
+//  Created by HaroldDavidson on 1/9/20.
+//  Copyright © 2020 HaroldDavidson. All rights reserved.
 //
 
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    // Create an ItemStore
-    let itemStore = ItemStore()
+
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        print(#function)
         // Override point for customization after application launch.
         return true
     }
@@ -33,5 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+
+
 }
 

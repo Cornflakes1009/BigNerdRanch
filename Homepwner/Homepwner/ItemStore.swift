@@ -10,6 +10,12 @@ import UIKit
 
 class ItemStore {
     var allItems = [Item]()
+    let itemsArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        
+        return documentDirectory.appendingPathComponent("items.archive")
+    }()
     
     // discardable means that the caller of the function can ignore the result of calling the function
     @discardableResult func createItem() -> Item {
@@ -39,5 +45,31 @@ class ItemStore {
         
         // insert item into array at new location
         allItems.insert(movedItem, at: toIndex)
+    }
+    
+    func saveChanges() -> Bool {
+        print("Saving items to \(itemsArchiveURL.path)")
+        do {
+            let data = try PropertyListEncoder().encode(allItems)
+            try data.write(to: itemsArchiveURL)
+            return true
+        } catch {
+            print("Error saving items: \(error) ")
+        }
+        return false
+    }
+    
+    init() {
+        typealias allItemsType = [Item]?
+        do {
+            let data = try Data(contentsOf: itemsArchiveURL)
+            let decoder = PropertyListDecoder()
+            if let allItems = try decoder.decode(allItemsType.self, from: data){
+                self.allItems = allItems
+            }
+            
+        } catch {
+            print("itemStore init error: \(error)")
+        }
     }
 }
