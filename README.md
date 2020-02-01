@@ -1,3 +1,3 @@
 # BigNerdRanch
 These are the projects that I completed from The Big Nerd Ranch guide. 
-Each project has the challenges completed and often more functionality added. 
+All projects were completed and run in Swift 5 and iOS 13.
